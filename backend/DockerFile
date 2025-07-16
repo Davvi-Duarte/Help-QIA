@@ -1,0 +1,20 @@
+#Usando a imagem oficial do Python como base
+FROM python:3.9
+
+# Setando o diretório de trabalho
+WORKDIR /app
+
+# Copiando os arquivos de requisitos para o diretório de trabalho
+COPY requirements.txt .
+
+# Instalando as dependências
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiando o restante dos arquivos da aplicação para o diretório de trabalho
+COPY . /app
+
+# Expondo a porta 8000 para acesso externo
+EXPOSE 8000
+
+# Comando para iniciar a aplicação FastAPI
+CMD ["uvicorn", "main:app", "--host", "0.0.0", "--port", "8000"]
