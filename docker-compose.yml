@@ -8,6 +8,9 @@ services:
       - ./backend:/app:Z
     working_dir: /app   # 👈 ESSENCIAL para o uvicorn achar o main.py
     restart: always
+    environment:
+      - GEMINI_API_KEY=AIzaSyCbpGu7cm36qbUvEVNakPtksxuxVnkleK8
+
 
 
   #frontend:
