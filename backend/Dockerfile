@@ -5,7 +5,7 @@ FROM python:3.9
 WORKDIR /app
 
 # Copia os arquivos do projeto para o container
-COPY . .
+COPY requirements.txt .
 
 # Instala as dependências
 RUN pip install --no-cache-dir -r requirements.txt
